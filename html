@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Placeholder Website">
+    <title>Affordable Water Softeners</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="documents/tear.jpg" alt="logo">
+            </div>  
+            <div class="hero">
+            <h2>Clean Water, Better Life</h2>
+            <p>Your health starts with pure water.</p>
+            <a href="#contact"><button>Get Started</button></a>
+        </div>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    
+
+    <!-- Products Section -->
+    <section id="products">
+        <h2>Products and Facts!</h2>
+        <div class="product-list">
+            <div class="product-item-1">
+                <a href="html_2"><button> <h3>Water Filtration System</h3>
+                <p>High-quality filters for clean and healthy water.</p></button>
+               </a>
+                
+            </div>
+
+            <div class="product-item-2">
+                <a href="html_3"><button><h3>Benefits Of Water Filtration  </h3>
+                <p>Protect your pipes and enjoy softer water every day.</p></button></a>
+            </div>
+            <div class="product-item-3">
+                <a href="html_4"><button><h3>Reverse Osmosis</h3>
+                <p>Learn about how reverse osmosis works, its benefits, and water purification.</p></button></a>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>With 15 years of experience in the Water Treatment Industry, 
+            we've successfully completed over a thousand jobs, 
+            delivering reliable and high-quality service. 
+            No job is too big or too small—we 
+            handle everything from residential to commercial projects with expertise.
+            We offer free estimates and are committed to customer satisfaction. 
+            Our team works anywhere in Houston and the Greater Houston area, 
+            ensuring clean, safe, and efficient water solutions for homes and businesses. 
+            Whether you need installation, maintenance, or repairs, 
+            you can trust us to get the job done right the first time.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+        
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+        
+            fetch("http://localhost:3000/send-text", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ name, email, message })
+            })
+            .then(response => response.text())
+            .then(data => alert("Message sent successfully!"))
+            .catch(error => alert("Error sending message."));
+        });
+        </script>
+        
+
+    <footer>
+        <p>&copy; 2025 Water Solutions. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
