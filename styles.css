@@ -499,6 +499,26 @@ body {
     border-radius: 15px;
 }
 
+.card-1-install {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.card-1-install :hover {
+    transform: translateY(-5px);
+}
+
+.card-1-install img {
+    width: 100%;
+    border-radius: 15px;
+}
 
 
 
